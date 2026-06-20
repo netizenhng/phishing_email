@@ -1,0 +1,42 @@
+PROCESS 
+
+1. Import Libraries
+2. Load Dataset
+3. Preprocessing
+4. TF-IDF
+5. Train Model
+6. Evaluation
+7. Save Model
+
+        CEAS_08 + Nazario + Nigerian_Fraud + SpamAssassin
+                ↓
+        Chuẩn hóa về cùng dạng: text, label, dataset_source
+                ↓
+        Tiền xử lý văn bản
+                ↓
+        TF-IDF
+                ↓
+        Train/Test Split
+                ↓
+        Random Forest
+                ↓
+        Đánh giá mô hình
+                ↓
+        Lưu rf_model.pkl và tfidf.pkl
+                ↓
+        Streamlit dùng model mới để dự đoán
+
+
+THƯ VIỆN SỬ DỤNG
+        pandas
+        numpy
+        scikit-learn
+        streamlit
+        nltk
+        joblib
+
+APP
+    app.py
+    preprocess.py: chứa các hàm tiền xử lý văn bản nhằm đảm bảo 
+    dữ liệu đầu vào của website được xử lý giống với dữ liệu sử dụng trong 
+    quá trình huấn luyện mô hình.
