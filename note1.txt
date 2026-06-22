@@ -8,24 +8,69 @@ PROCESS
 6. Evaluation
 7. Save Model
 
-        CEAS_08 + Nazario + Nigerian_Fraud + SpamAssassin
-                ↓
-        Chuẩn hóa về cùng dạng: text, label, dataset_source
-                ↓
-        Tiền xử lý văn bản
-                ↓
-        TF-IDF
-                ↓
-        Train/Test Split
-                ↓
-        Random Forest
-                ↓
-        Đánh giá mô hình
-                ↓
-        Lưu rf_model.pkl và tfidf.pkl
-                ↓
-        Streamlit dùng model mới để dự đoán
+LUỒNG CỦA DỰ ÁN
+                4 Dataset CSV
+                (CEAS_08 + Nazario + Nigerian_Fraud + SpamAssassin)
+                                ↓
 
+                Hợp nhất dữ liệu 4 dataset
+                (text, label, dataset_source)
+
+                                ↓
+
+                Tiền xử lý văn bản
+                (lowercase, regex, stopwords)
+
+                                ↓
+
+                TF-IDF
+                (max_features = 5000)
+
+                                ↓
+
+                Train/Test Split
+                (80% - 20%)
+
+                                ↓
+
+                Random Forest
+                (100 trees)
+
+                                ↓
+
+                Classification Report
+                Confusion Matrix
+                Feature Importance
+
+                                ↓
+
+                Lưu model
+                rf_model.pkl
+                tfidf.pkl
+
+                                ↓
+
+                Website Streamlit
+
+                                ↓
+
+                User nhập Email
+
+                                ↓
+
+                clean_text()
+
+                                ↓
+
+                tfidf.transform()
+
+                                ↓
+
+                rf_model.predict()
+
+                                ↓
+
+                ⚠️ Phishing hoặc ✅ Legitimate 
 
 THƯ VIỆN SỬ DỤNG
         pandas
@@ -45,3 +90,20 @@ NOTEBOOK
 MODEL
 
 DATA
+        Tổng là: 49860 email, trong đó:
+        CEAS_08           39154
+        SpamAssasin        5809
+        Nigerian_Fraud     3332
+        Nazario            1565
+
+        ===== LABEL COUNTS BY DATASET =====
+        label               0      1
+
+        CEAS_08         17312  21842
+        Nazario             0   1565
+        Nigerian_Fraud      0   3332
+        SpamAssasin      4091   1718
+                ===== LABEL COUNTS =====
+                label
+                1    28457
+                0    21403

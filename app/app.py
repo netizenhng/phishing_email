@@ -49,7 +49,7 @@ with st.sidebar:
 
 
 # Tiêu đề
-st.title("🛡️ Phishing Email Detection System")
+st.title("🛡️ Phishing Email Detection System based on Text Content Analysis")
 
 
 st.divider()
